@@ -1,0 +1,25 @@
+{
+  // --- Formatter & Linting Configuration ---
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "editor.formatOnSave": true,
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": "explicit"
+  },
+  "eslint.validate": [
+    "javascript",
+    "typescript",
+    "javascriptreact",
+    "typescriptreact"
+  ],
+
+  // --- Tailwind CSS IntelliSense Enhancement ---
+  // This enables Tailwind CSS linting and quick suggestions for class sorting.
+  "editor.quickSuggestions": {
+    "strings": "on"
+  }
+
+  // --- Icon Theme (Optional - User can activate) ---
+  // We recommend Material Icon Theme, but won't force it as it's a personal preference.
+  // To activate it after installing the extension, uncomment the line below.
+  // "workbench.iconTheme": "material-icon-theme"
+}

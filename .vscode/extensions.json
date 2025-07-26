@@ -1,0 +1,15 @@
+{
+  "recommendations": [
+    // --- Essential for Project Consistency & Quality ---
+    "dbaeumer.vscode-eslint",
+    "esbenp.prettier-vscode",
+    "bradlc.vscode-tailwindcss",
+    "streetsidesoftware.code-spell-checker",
+
+    // --- Highly Recommended for Productivity ---
+    "eamodio.gitlens",
+    "formulahendry.auto-rename-tag",
+    "dsznajder.es7-react-js-snippets",
+    "pkief.material-icon-theme"
+  ]
+}
