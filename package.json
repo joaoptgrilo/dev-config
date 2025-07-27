@@ -1,18 +1,22 @@
 {
   "name": "@joaoptgrilo/dev-config",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "A sharable suite of configurations for my personal TypeScript projects, including ESLint, Prettier, and TSConfig.",
   "author": "João Grilo",
   "license": "MIT",
   "main": "eslint.config.js",
   "files": [
+    ".cspell.json",
     ".prettierrc.json",
     ".vscode/extensions.json",
     ".vscode/settings.json",
     "eslint.config.js",
+    "playwright/base.config.ts",
+    "playwright/tsconfig.json",
     "tsconfig/base.json"
   ],
   "peerDependencies": {
+    "@playwright/test": ">=1.0.0",
     "eslint": ">=8.0.0",
     "prettier": ">=3.0.0",
     "typescript": ">=5.0.0"
@@ -22,6 +26,10 @@
     "@next/eslint-plugin-next": "^14.2.3",
     "globals": "^15.0.0",
     "typescript-eslint": "^7.8.0"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.45.0",
+    "@types/node": "^20.12.12"
   },
   "publishConfig": {
     "access": "public"

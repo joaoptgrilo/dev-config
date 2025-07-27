@@ -6,17 +6,18 @@ This package provides a single source of truth for development standards, ensuri
 
 ## What's Included?
 
-*   **ESLint:** A strict, type-aware configuration with presets for base TypeScript and Next.js projects.
-*   **Prettier:** A consistent set of code formatting rules.
-*   **TSConfig:** A base TypeScript configuration with modern, strict compiler settings.
-*   **VS Code Integration:** Recommended extensions and settings (`.vscode/`) for a seamless, format-on-save developer experience.
+- **ESLint:** A strict, type-aware configuration with presets for base TypeScript and Next.js projects.
+- **Prettier:** A consistent set of code formatting rules.
+- **TSConfig:** A base TypeScript configuration with modern, strict compiler settings.
+- **Playwright:** A base configuration for E2E testing.
+- **VS Code Integration:** Recommended extensions and settings (`.vscode/`) for a seamless, format-on-save developer experience.
 
 ## Installation
 
 Install the package and its required peer dependencies in your new project:
 
 ```bash
-npm install @joaoptgrilo/dev-config eslint typescript prettier --save-dev
+npm install @joaoptgrilo/dev-config eslint typescript prettier @playwright/test --save-dev
 ```
 
 ## Usage
@@ -31,17 +32,12 @@ In your project's root, create an `eslint.config.js` file and import the desired
 
 ```javascript
 // eslint.config.js
-import jgConfig from '@joaoptgrilo/dev-config';
+import jgConfig from "@joaoptgrilo/dev-config";
 
 // Use the Next.js preset from the shared package
 export default [
   ...jgConfig.next,
   // You can add project-specific overrides here if needed
-  // {
-  //   rules: {
-  //     "some-rule-to-override": "off"
-  //   }
-  // }
 ];
 ```
 
@@ -67,8 +63,27 @@ In your project's `tsconfig.json`, extend the base configuration from the packag
 
 ### Prettier
 
-Create a `.prettierrc.json` file at the root of your project. Prettier will automatically resolve the configuration from the package in your `node_modules`.
+Create a `.prettierrc.js` (note the `.js` extension) file at the root of your project that imports the shared config.
 
-```json
-"@joaoptgrilo/dev-config/.prettierrc.json"
+```javascript
+// .prettierrc.js
+module.exports = require("@joaoptgrilo/dev-config/.prettierrc.json");
+```
+
+### Playwright
+
+In your project's `playwright.config.ts`, import and extend the base configuration.
+
+```typescript
+import { defineConfig } from "@playwright/test";
+import baseConfig from "@joaoptgrilo/dev-config/playwright/base.config";
+
+export default defineConfig({
+  ...baseConfig,
+  testDir: "./e2e",
+  use: {
+    ...baseConfig.use,
+    baseURL: "http://localhost:3000",
+  },
+});
 ```
