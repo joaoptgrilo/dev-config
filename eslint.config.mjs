@@ -1,58 +1,66 @@
-// eslint.config.js
+// eslint.config.mjs
 import globals from "globals";
 import tseslint from "typescript-eslint";
-import js from "@eslint/js";
-import nextPlugin from "@next/eslint-plugin-next";
+import eslintReact from "@eslint-react/eslint-plugin";
+import eslintPluginReact from "eslint-plugin-react";
+import eslintPluginNext from "@next/eslint-plugin-next";
+import stylistic from "@stylistic/eslint-plugin";
+import perfectionist from "eslint-plugin-perfectionist";
 
-// This is the base configuration for any TypeScript project (React or backend)
-const baseConfig = [
-  js.configs.recommended,
-  ...tseslint.configs.recommended,
+// Base configuration for TypeScript projects
+const base = [
+  { ignores: [".next/", "node_modules/", "out/"] },
+  {
+    plugins: {
+      "@typescript-eslint": tseslint.plugin,
+      "@stylistic": stylistic,
+      perfectionist,
+    },
+  },
   {
     languageOptions: {
       globals: { ...globals.browser, ...globals.node },
       parser: tseslint.parser,
       parserOptions: {
-        project: true,
+        ecmaFeatures: { modules: true, jsx: true },
+        project: "./tsconfig.json",
       },
     },
-    plugins: {
-      "@typescript-eslint": tseslint.plugin,
-    },
+  },
+  {
     rules: {
-      "@typescript-eslint/ban-types": [
+      // Add any base rules for all projects here
+      "perfectionist/sort-objects": [
         "error",
         {
-          types: {
-            "React.FC": { message: "Use arrow function syntax instead." },
-            FC: { message: "Use arrow function syntax instead." },
-            "React.FunctionComponent": {
-              message: "Use arrow function syntax instead.",
-            },
-          },
-          extendDefaults: true,
+          type: "natural",
+          order: "asc",
+          "partition-by-comment": true,
         },
       ],
     },
   },
 ];
 
-// This is the configuration for Next.js projects, building on the base
-const nextConfig = [
-  ...baseConfig,
+// Configuration for Next.js projects, extending the base
+const next = [
+  ...base,
+  eslintPluginNext.configs["flat/recommended"],
   {
-    files: ["**/*.{js,ts,jsx,tsx}"],
     plugins: {
-      "@next/next": nextPlugin,
+      ...eslintReact.configs.recommended.plugins,
+      "react-compiler": eslintPluginReact,
     },
     rules: {
-      ...nextPlugin.configs.recommended.rules,
-      ...nextPlugin.configs["core-web-vitals"].rules,
+      ...eslintReact.configs.recommended.rules,
+      "react-compiler/react-compiler": "error",
+      "@next/next/no-html-link-for-pages": "off",
     },
   },
 ];
 
-export default {
-  base: baseConfig,
-  next: nextConfig,
-};
+// Named exports for consumers
+export { base, next };
+
+// Default export for linting this package itself
+export default base;
