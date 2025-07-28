@@ -9,7 +9,7 @@ import perfectionist from "eslint-plugin-perfectionist";
 
 // Base configuration for TypeScript projects
 const base = [
-  { ignores: [".next/", "node_modules/", "out/"] },
+  { ignores: [".next/", "node_modules/", "out/", "eslint.config.mjs"] }, // MODIFIED: Added self-ignore
   {
     plugins: {
       "@typescript-eslint": tseslint.plugin,
@@ -29,7 +29,6 @@ const base = [
   },
   {
     rules: {
-      // Add any base rules for all projects here
       "perfectionist/sort-objects": [
         "error",
         {
