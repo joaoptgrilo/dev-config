@@ -1,6 +1,6 @@
 {
   "name": "@joaoptgrilo/dev-config",
-  "version": "1.2.0",
+  "version": "1.2.1",
   "description": "Sharable configurations for ESLint, Prettier, TypeScript, Playwright, and more.",
   "author": "João Grilo",
   "license": "MIT",
@@ -22,6 +22,7 @@
     "./.vscode/settings.json": "./.vscode/settings.json"
   },
   "scripts": {
+    "format": "prettier --write .",
     "check": "prettier --check . && publint",
     "prepublishOnly": "npm run check"
   },
