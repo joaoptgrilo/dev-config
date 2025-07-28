@@ -9,7 +9,15 @@ import perfectionist from "eslint-plugin-perfectionist";
 
 // Base configuration for TypeScript projects
 const base = [
-  { ignores: [".next/", "node_modules/", "out/", "eslint.config.mjs"] }, // MODIFIED: Added self-ignore
+  {
+    ignores: [
+      ".next/",
+      "node_modules/",
+      "out/",
+      "eslint.config.mjs",
+      "playwright/",
+    ],
+  },
   {
     plugins: {
       "@typescript-eslint": tseslint.plugin,
