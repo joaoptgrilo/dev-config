@@ -1,6 +1,6 @@
 {
   "name": "@joaoptgrilo/dev-config",
-  "version": "1.1.5",
+  "version": "1.1.6",
   "description": "Sharable configurations for ESLint, Prettier, TypeScript, Playwright, and more.",
   "author": "João Grilo",
   "license": "MIT",
@@ -27,7 +27,7 @@
   },
   "peerDependencies": {
     "@playwright/test": ">=1.0.0",
-    "eslint": ">=8.0.0",
+    "eslint": ">=9.0.0",
     "prettier": ">=3.0.0",
     "typescript": ">=5.0.0"
   },
@@ -43,6 +43,6 @@
     "prettier": "^3.3.3",
     "publint": "^0.2.10",
     "typescript": "^5.5.3",
-    "typescript-eslint": "^7.16.0"
+    "typescript-eslint": "^8.0.0-alpha.32"
   }
 }
