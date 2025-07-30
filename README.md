@@ -17,8 +17,7 @@ This package provides a single source of truth for development standards, ensuri
 Install the package and its required peer dependencies in your new project:
 
 ```bash
-npm install @joaoptgrilo/dev-config eslint typescript prettier @playwright/test --save-dev
-```
+npm install @joaoptgrilo/dev-config eslint typescript prettier @playwright/test --save-dev```
 
 ## Usage
 
@@ -26,20 +25,19 @@ After installation, you can easily extend the configurations in your project.
 
 ### ESLint
 
-In your project's root, create an `eslint.config.js` file and import the desired configuration.
+In your project's root, create an `eslint.config.js` file and use a **named import** for the desired configuration.
 
 **Example for a Next.js Project:**
 
 ```javascript
 // eslint.config.js
-import jgConfig from "@joaoptgrilo/dev-config";
+import { next } from "@joaoptgrilo/dev-config";
 
 // Use the Next.js preset from the shared package
 export default [
-  ...jgConfig.next,
+  ...next,
   // You can add project-specific overrides here if needed
 ];
-```
 
 ### TypeScript
 
@@ -49,41 +47,6 @@ In your project's `tsconfig.json`, extend the base configuration from the packag
 {
   "extends": "@joaoptgrilo/dev-config/tsconfig/base.json",
   "compilerOptions": {
-    // Add your project-specific paths and settings here
-    "plugins": [{ "name": "next" }],
-    "baseUrl": ".",
-    "paths": {
-      "@/*": ["./src/*"]
-    }
-  },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],
-  "exclude": ["node_modules"]
+    // Add your project-specific settings here
+  }
 }
-```
-
-### Prettier
-
-Create a `.prettierrc.js` (note the `.js` extension) file at the root of your project that imports the shared config.
-
-```javascript
-// .prettierrc.js
-module.exports = require("@joaoptgrilo/dev-config/.prettierrc.json");
-```
-
-### Playwright
-
-In your project's `playwright.config.ts`, import and extend the base configuration.
-
-```typescript
-import { defineConfig } from "@playwright/test";
-import baseConfig from "@joaoptgrilo/dev-config/playwright/base.config";
-
-export default defineConfig({
-  ...baseConfig,
-  testDir: "./e2e",
-  use: {
-    ...baseConfig.use,
-    baseURL: "http://localhost:3000",
-  },
-});
-```
