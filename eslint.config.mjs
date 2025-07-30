@@ -34,12 +34,12 @@ const base = [
         {
           type: "natural",
           order: "asc",
-          "partition-by-comment": true,
+          partitionByComment: true, // Corrected camelCase key
         },
       ],
     },
   },
-];
+].filter(Boolean); // Add robustness to prevent undefined entries
 
 // Configuration for Next.js projects, extending the base
 const next = [
@@ -56,10 +56,7 @@ const next = [
       "@next/next/no-html-link-for-pages": "off",
     },
   },
-];
+].filter(Boolean); // Add robustness to prevent undefined entries
 
-// Named exports for consumers
+// Use NAMED EXPORTS for consumers
 export { base, next };
-
-// Default export for linting this package itself
-export default base;
