@@ -5,6 +5,7 @@
   "author": "João Grilo",
   "license": "MIT",
   "main": "eslint.config.mjs",
+  "type": "module",
   "files": [
     ".prettierrc.json",
     ".cspell.json",
@@ -38,6 +39,9 @@
   },
   "devDependencies": {
     "prettier": "^3.3.3",
-    "publint": "^0.2.10"
+    "publint": "^0.2.12"
+  },
+  "dependencies": {
+    "@types/node": "^24.1.0"
   }
 }
