@@ -1,6 +1,6 @@
 {
   "name": "@joaoptgrilo/dev-config",
-  "version": "3.0.2",
+  "version": "3.0.3",
   "description": "A sharable suite of configurations for my personal TypeScript projects, including ESLint, Prettier, and TSConfig.",
   "author": "João Grilo",
   "license": "MIT",
