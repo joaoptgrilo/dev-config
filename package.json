@@ -1,49 +1,57 @@
-{
-  "name": "@joaoptgrilo/dev-config",
-  "version": "3.0.3",
-  "description": "A sharable suite of configurations for my personal TypeScript projects, including ESLint, Prettier, and TSConfig.",
-  "author": "João Grilo",
-  "license": "MIT",
-  "main": "eslint.config.mjs",
-  "type": "module",
-  "files": [
-    ".cspell.json",
-    ".prettierrc.json",
-    ".vscode/extensions.json",
-    ".vscode/settings.json",
-    "eslint.config.mjs",
-    "playwright/base.config.ts",
-    "playwright/tsconfig.json",
-    "tsconfig/base.json"
-  ],
-  "peerDependencies": {
-    "@playwright/test": ">=1.0.0",
-    "eslint": ">=8.0.0",
-    "prettier": ">=3.0.0",
-    "typescript": ">=5.0.0",
-    "globals": ">=15.0.0",
-    "@eslint-react/eslint-plugin": ">=1.0.0",
-    "eslint-plugin-react": ">=7.0.0",
-    "@next/eslint-plugin-next": ">=14.0.0",
-    "@stylistic/eslint-plugin": ">=1.0.0",
-    "eslint-plugin-perfectionist": ">=2.0.0"
-  },
-  "dependencies": {
-    "@eslint/js": "^8.57.0",
-    "@next/eslint-plugin-next": "^14.2.3",
-    "typescript-eslint": "^7.8.0",
-    "globals": "^15.0.0",
-    "@eslint-react/eslint-plugin": "^1.0.0",
-    "eslint-plugin-react": "^7.34.1",
-    "@stylistic/eslint-plugin": "^1.7.0",
-    "eslint-plugin-perfectionist": "^2.10.0"
-  },
-  "devDependencies": {
-    "@types/node": "^24.1.0",
-    "prettier": "^3.3.3",
-    "publint": "^0.2.12"
-  },
-  "publishConfig": {
-    "access": "public"
-  }
+﻿{
+    "name":  "@joaoptgrilo/dev-config",
+    "version":  "3.0.5",
+    "description":  "A sharable suite of configurations for my personal TypeScript projects, including ESLint, Prettier, and TSConfig.",
+    "author":  "JoÃ£o Grilo",
+    "license":  "MIT",
+    "main":  "eslint.config.mjs",
+    "type":  "module",
+    "files":  [
+                  ".cspell.json",
+                  ".prettierrc.json",
+                  ".vscode/extensions.json",
+                  ".vscode/settings.json",
+                  "eslint.config.mjs",
+                  "playwright/base.config.ts",
+                  "playwright/tsconfig.json",
+                  "tsconfig/base.json"
+              ],
+    "peerDependencies":  {
+                             "@playwright/test":  "\u003e=1.0.0",
+                             "eslint":  "\u003e=8.0.0",
+                             "prettier":  "\u003e=3.0.0",
+                             "typescript":  "\u003e=5.0.0",
+                             "globals":  "\u003e=15.0.0",
+                             "@eslint-react/eslint-plugin":  "\u003e=1.0.0",
+                             "eslint-plugin-react":  "\u003e=7.0.0",
+                             "@next/eslint-plugin-next":  "\u003e=14.0.0",
+                             "@stylistic/eslint-plugin":  "\u003e=1.0.0",
+                             "eslint-plugin-perfectionist":  "\u003e=2.0.0"
+                         },
+    "dependencies":  {
+                         "@eslint/js":  "^8.57.0",
+                         "@next/eslint-plugin-next":  "^14.2.3",
+                         "typescript-eslint":  "^7.8.0",
+                         "globals":  "^15.0.0",
+                         "@eslint-react/eslint-plugin":  "^1.0.0",
+                         "eslint-plugin-react":  "^7.34.1",
+                         "@stylistic/eslint-plugin":  "^1.7.0",
+                         "eslint-plugin-perfectionist":  "^2.10.0"
+                     },
+    "devDependencies":  {
+                            "@types/node":  "^24.1.0",
+                            "prettier":  "^3.3.3",
+                            "publint":  "^0.2.12"
+                        },
+    "publishConfig":  {
+                          "access":  "public"
+                      },
+    "exports":  {
+                    ".":  "./eslint.config.mjs",
+                    "./prettier":  "./.prettierrc.json",
+                    "./package.json":  "./package.json",
+                    "./tsconfig/base":  "./tsconfig/base.json",
+                    "./eslint":  "./eslint.config.mjs",
+                    "./playwright":  "./playwright/base.config.ts"
+                }
 }
