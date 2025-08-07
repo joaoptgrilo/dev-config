@@ -34,7 +34,7 @@ const base = [
         {
           type: "natural",
           order: "asc",
-          partitionByComment: true, // Corrected camelCase key
+          "partition-by-comment": true, // Corrected camelCase key
         },
       ],
     },
