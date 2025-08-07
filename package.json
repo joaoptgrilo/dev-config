@@ -1,6 +1,6 @@
 {
-  "name": "@joaoptgrilo/dev-config",
-  "version": "4.0.2",
+  "name": "@joaoptgrilo/dev-config-frontend",
+  "version": "5.0.0",
   "private": false,
   "description": "Sharable configurations for TypeScript, ESLint, Prettier, and more.",
   "main": "eslint.config.mjs",
@@ -18,15 +18,16 @@
     "format": "prettier --write ."
   },
   "peerDependencies": {
-    "@eslint-react/eslint-plugin": "^1.5.0",
-    "@next/eslint-plugin-next": "^14.0.0",
-    "@stylistic/eslint-plugin": "^2.0.0",
-    "eslint": ">=9.0.0",
-    "eslint-plugin-perfectionist": "^2.0.0",
-    "eslint-plugin-react": "^7.34.0",
-    "eslint-plugin-react-compiler": "^0.0.0-experimental-5367375-20240625",
-    "globals": ">=15.0.0",
-    "typescript-eslint": ">=8.0.0"
+    "@eslint-react/eslint-plugin": "^1.6.0",
+    "@next/eslint-plugin-next": "^14.2.5",
+    "@stylistic/eslint-plugin": "^2.3.0",
+    "eslint": "^9.8.0",
+    "eslint-plugin-perfectionist": "^2.11.0",
+    "eslint-plugin-react": "^7.35.0",
+    "eslint-plugin-react-compiler": "experimental",
+    "globals": "^15.8.0",
+    "typescript": "^5.5.4",
+    "typescript-eslint": "^8.3.0"
   },
   "devDependencies": {
     "@eslint-react/eslint-plugin": "^1.6.0",
@@ -36,7 +37,7 @@
     "eslint": "^9.8.0",
     "eslint-plugin-perfectionist": "^2.11.0",
     "eslint-plugin-react": "^7.35.0",
-    "eslint-plugin-react-compiler": "^0.0.0-experimental-5367375-20240625",
+    "eslint-plugin-react-compiler": "experimental",
     "globals": "^15.8.0",
     "prettier": "^3.3.3",
     "typescript": "^5.5.4",
