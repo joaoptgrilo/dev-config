@@ -2,12 +2,11 @@
 import globals from "globals";
 import tseslint from "typescript-eslint";
 import eslintReact from "@eslint-react/eslint-plugin";
-import eslintPluginReact from "eslint-plugin-react";
+import eslintPluginReactCompiler from "eslint-plugin-react-compiler";
 import eslintPluginNext from "@next/eslint-plugin-next";
 import stylistic from "@stylistic/eslint-plugin";
 import perfectionist from "eslint-plugin-perfectionist";
 
-// Base configuration for TypeScript projects
 const base = [
   { ignores: [".next/", "node_modules/", "out/"] },
   {
@@ -34,21 +33,20 @@ const base = [
         {
           type: "natural",
           order: "asc",
-          "partition-by-comment": true, // Corrected camelCase key
+          "partition-by-comment": true,
         },
       ],
     },
   },
-].filter(Boolean); // Add robustness to prevent undefined entries
+].filter(Boolean);
 
-// Configuration for Next.js projects, extending the base
 const next = [
   ...base,
   eslintPluginNext.configs["flat/recommended"],
   {
     plugins: {
       ...eslintReact.configs.recommended.plugins,
-      "react-compiler": eslintPluginReact,
+      "react-compiler": eslintPluginReactCompiler,
     },
     rules: {
       ...eslintReact.configs.recommended.rules,
@@ -56,7 +54,6 @@ const next = [
       "@next/next/no-html-link-for-pages": "off",
     },
   },
-].filter(Boolean); // Add robustness to prevent undefined entries
+].filter(Boolean);
 
-// Use NAMED EXPORTS for consumers
 export { base, next };

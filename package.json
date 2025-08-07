@@ -1,6 +1,6 @@
 {
   "name": "@joaoptgrilo/dev-config",
-  "version": "4.0.1",
+  "version": "4.0.2",
   "private": false,
   "description": "Sharable configurations for TypeScript, ESLint, Prettier, and more.",
   "main": "eslint.config.mjs",
@@ -24,6 +24,7 @@
     "eslint": ">=9.0.0",
     "eslint-plugin-perfectionist": "^2.0.0",
     "eslint-plugin-react": "^7.34.0",
+    "eslint-plugin-react-compiler": "^0.0.0-experimental-5367375-20240625",
     "globals": ">=15.0.0",
     "typescript-eslint": ">=8.0.0"
   },
@@ -35,21 +36,10 @@
     "eslint": "^9.8.0",
     "eslint-plugin-perfectionist": "^2.11.0",
     "eslint-plugin-react": "^7.35.0",
+    "eslint-plugin-react-compiler": "^0.0.0-experimental-5367375-20240625",
     "globals": "^15.8.0",
     "prettier": "^3.3.3",
     "typescript": "^5.5.4",
-    "typescript-eslint": "^8.0.0-alpha.54"
-  },
-  "keywords": [
-    "eslint",
-    "config",
-    "typescript",
-    "prettier"
-  ],
-  "author": "Joao Grilo",
-  "license": "MIT",
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/joaoptgrilo/dev-config.git"
+    "typescript-eslint": "^8.3.0"
   }
 }
